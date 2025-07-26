@@ -35,10 +35,10 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-zinc-900 text-white shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-16 py-4">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <Link href={'/'} className="flex items-center gap-3">
           <Image src="/logo.png" alt="logo" width={40} height={40} />
           <h1 className="text-lg font-bold md:text-2xl tracking-wide">Health Voice</h1>
-        </div>
+        </Link>
 
         {/* Desktop Nav with framer-motion */}
         <nav className="hidden md:flex gap-8 items-center">
@@ -48,7 +48,6 @@ export default function Header() {
               custom={index}
               initial="hidden"
               animate="visible"
-              variants={desktopNavVariants}
             >
               <Link href={item.path}>
                 <span

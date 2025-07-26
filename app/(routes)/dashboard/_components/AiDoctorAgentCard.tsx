@@ -48,8 +48,8 @@ export default function AiDoctorAgentCard({ AiDoctorAgent }: Props) {
   return (
     <div className="w-full rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 shadow-xl overflow-hidden hover:scale-[1.01] transition-all duration-300">
       <Image
-        src={AiDoctorAgent.image}
-        alt={AiDoctorAgent.name}
+        src={AiDoctorAgent?.image}
+        alt={AiDoctorAgent?.name}
         width={200}
         height={200}
         className="w-full h-[250px] object-cover border-b border-gray-700"
