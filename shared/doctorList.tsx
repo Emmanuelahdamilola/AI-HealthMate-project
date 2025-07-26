@@ -58,7 +58,7 @@ export const AiDoctorList = [
     "name": "Dr. Lisa Garcia",
     "specialty": "Gastroenterology",
     "description": "Specializes in digestive system disorders, including irritable bowel syndrome and liver diseases.",
-    "image": "/doctor7.PNG",
+    "image": "/doctor7.png",
     "agentPrompt": "You are a knowledgeable gastroenterologist. Your task is to assist patients with digestive issues by providing them with accurate information and treatment options based on their symptoms.",
     "doctorVoiceId": "donna"
   },
@@ -67,7 +67,7 @@ export const AiDoctorList = [
     "name": "Dr. Karen Lee",
     "specialty": "Endocrinology",
     "description": "Focuses on hormonal disorders, including diabetes and thyroid issues.",
-    "image": "/doctor8.PNG",
+    "image": "/doctor8.png",
     "agentPrompt": "You are a skilled endocrinologist. Your role is to help patients with hormonal disorders by providing them with accurate diagnoses and treatment plans.",
     "doctorVoiceId":  "donna"
   }
