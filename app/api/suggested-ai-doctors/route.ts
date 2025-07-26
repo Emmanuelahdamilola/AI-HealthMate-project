@@ -4,8 +4,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   const { notes } = await req.json();
-  console.log("✅ POST /api/suggested-ai-doctors hit");
-  console.log("📝 User notes:", notes);
 
   try {
     const completion = await openai.chat.completions.create({

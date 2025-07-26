@@ -50,6 +50,48 @@ function MedicalReport({ history }: Props) {
     pdf.save('medical-report.pdf')
   }
 
+  const handleDownload = (report: SessionParams) => {
+    const doc = new jsPDF()
+    let y = 10
+
+    doc.setFontSize(16)
+    doc.text('Medical Report', 10, y)
+    y += 10
+
+    doc.setFontSize(12)
+    doc.text(`Session ID: ${report.id || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`AI Assistant: ${report.selectedDoctor?.name || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`User: ${report.report?.user || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Date: ${new Date(report.createdOn).toLocaleString()}`, 10, y)
+    y += 8
+
+    doc.text(`Main Complaint: ${report.note || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Symptoms: ${report.report?.symptoms?.join(', ') || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Duration: ${report.report?.duration || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Severity: ${report.report?.severity || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Medications Mentioned: ${report.report?.medicationsMentioned?.join(', ') || 'N/A'}`, 10, y)
+    y += 8
+    doc.text(`Recommendations: ${report.report?.recommendations?.join(', ') || 'N/A'}`, 10, y)
+    y += 8
+
+    // Handle long summaries
+    const summary = report.report?.summary || 'N/A'
+    const splitSummary = doc.splitTextToSize(`Summary: ${summary}`, 180)
+    doc.text(splitSummary, 10, y)
+    y += splitSummary.length * 8
+
+    // Save with unique filename
+    doc.save(`medical_report_${report.id || Date.now()}.pdf`)
+  }
+
+
   return (
     <motion.div
       className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-6 flex flex-col items-center"
@@ -121,7 +163,7 @@ function MedicalReport({ history }: Props) {
                     <TableCell>{report.note || '—'}</TableCell>
                     <TableCell>{new Date(report.createdOn).toLocaleDateString()}</TableCell>
                     <TableCell className="text-right">
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleDownload(report)}>
                         Download
                       </Button>
                     </TableCell>

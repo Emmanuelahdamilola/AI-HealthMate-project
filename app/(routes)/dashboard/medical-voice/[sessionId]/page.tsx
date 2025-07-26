@@ -11,12 +11,27 @@ import jsPDF from 'jspdf';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
 
+
+type ReportType = {
+  sessionId: string
+  agent: string
+  user: string
+  timestamp: string
+  mainComplaint: string
+  symptoms: string[]
+  summary: string
+  duration: string
+  severity: string
+  medicationsMentioned: string[]
+  recommendations: string[]
+}
+
 export type SessionParams = {
   id: number,
   note: string,
   sessionId: string,
   selectedDoctor: AiDoctorAgent,
-  report: JSON,
+  report?: ReportType,
   createdOn: string,
   status: string,
 
@@ -71,10 +86,10 @@ export default function MedicalVoice() {
         setVoiceAnimating(false);
         //  Optional: Add slight delay to simulate listening
         if (role === 'assistant') {
-          setListeningPaused(true); 
+          setListeningPaused(true);
           setTimeout(() => {
             setListeningPaused(false);
-          }, 1500); 
+          }, 1500);
         }
       }
     }
@@ -82,10 +97,10 @@ export default function MedicalVoice() {
   const StartCall = async () => {
     setLoading(true);
 
-   
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      stream.getTracks().forEach(track => track.stop()); 
+      stream.getTracks().forEach(track => track.stop());
     } catch (err) {
       console.error("Microphone access denied or unavailable:", err);
       alert("Please allow microphone access to start the call.");
@@ -223,13 +238,15 @@ export default function MedicalVoice() {
             className="bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center"
             whileHover={{ scale: 1.02 }}
           >
-            <Image
-              src={selectedSession?.selectedDoctor.image}
-              alt={selectedSession?.selectedDoctor.name}
-              width={90}
-              height={90}
-              className="rounded-full border-4 border-blue-400 shadow-lg"
-            />
+            {selectedSession?.selectedDoctor?.image && (
+              <Image
+                src={selectedSession.selectedDoctor.image}
+                alt={selectedSession.selectedDoctor.name}
+                width={90}
+                height={90}
+                className="rounded-full border-4 border-blue-400 shadow-lg"
+              />
+            )}
             <h3 className="text-xl font-semibold mt-4 text-center">
               {selectedSession?.selectedDoctor.name}
             </h3>
