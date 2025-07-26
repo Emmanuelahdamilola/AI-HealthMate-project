@@ -48,6 +48,7 @@ export default function Header() {
               custom={index}
               initial="hidden"
               animate="visible"
+              variants={desktopNavVariants}
             >
               <Link href={item.path}>
                 <span
