@@ -81,13 +81,13 @@ function MedicalReport({ history }: Props) {
     doc.text(`Recommendations: ${report.report?.recommendations?.join(', ') || 'N/A'}`, 10, y)
     y += 8
 
-    // Handle long summaries
+
     const summary = report.report?.summary || 'N/A'
     const splitSummary = doc.splitTextToSize(`Summary: ${summary}`, 180)
     doc.text(splitSummary, 10, y)
     y += splitSummary.length * 8
 
-    // Save with unique filename
+
     doc.save(`medical_report_${report.id || Date.now()}.pdf`)
   }
 

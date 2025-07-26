@@ -62,7 +62,7 @@ export default function MedicalVoice() {
 
   const fetchSessionDetails = async () => {
     const result = await axios.get(`/api/chat-session?sessionId=` + sessionId);
-    // console.log("Fetched Session Data:", result.data);
+
     setSessionParams(result.data);
   };
   const selectedSession = sessionParams[0];
@@ -84,7 +84,7 @@ export default function MedicalVoice() {
         setTranscript('');
         setSpeaking(null);
         setVoiceAnimating(false);
-        //  Optional: Add slight delay to simulate listening
+
         if (role === 'assistant') {
           setListeningPaused(true);
           setTimeout(() => {

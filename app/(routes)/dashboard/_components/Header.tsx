@@ -19,18 +19,6 @@ export default function Header() {
     { id: 4, name: 'Contact', path: '/dashboard/contact' },
   ];
 
-  // const desktopNavVariants = {
-  //   hidden: { opacity: 0, y: -10 },
-  //   visible: (i: number) => ({
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       delay: i * 0.05,
-  //       duration: 0.3,
-  //       ease: 'easeOut', // use a supported string value
-  //     },
-  //   }),
-  // };
 
 
   return (
@@ -39,7 +27,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="logo" width={40} height={40} />
-          <h1 className="text-lg md:text-2xl font-bold tracking-wide">Health Voice</h1>
+          <h1 className="text-lg md:text-2xl font-bold tracking-wide">AI HealthMate</h1>
         </Link>
 
         {/* Desktop Nav */}
@@ -50,7 +38,7 @@ export default function Header() {
               custom={index}
               initial="hidden"
               animate="visible"
-              // variants={desktopNavVariants}
+
             >
               <Link href={item.path}>
                 <span
@@ -63,30 +51,7 @@ export default function Header() {
             </motion.div>
           ))}
         </nav>
-        {/* <nav className="hidden md:flex gap-8 items-center">
-          {menu.map((item, index) => (
-            <motion.div
-              key={item.id}
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={desktopNavVariants}
-            >
-              <Link href={item.path}>
-                <span
-                  className={`text-sm md:text-base font-medium transition-colors duration-200 cursor-pointer ${
-                    pathname === item.path
-                      ? 'text-purple-400'
-                      : 'text-zinc-300 hover:text-purple-400'
-                  }`}
-                >
-                  {item.name}
-                </span>
-              </Link>
-            </motion.div>
-          ))}
-        </nav> */}
-
+       
         {/* User + Mobile Menu Toggle */}
         <div className="flex items-center gap-4">
           <UserButton afterSignOutUrl="/" />

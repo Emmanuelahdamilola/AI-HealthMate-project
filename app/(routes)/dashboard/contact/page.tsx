@@ -13,7 +13,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle your form submission here (email, backend API, etc.)
+
     setSubmitted(true);
   };
 
