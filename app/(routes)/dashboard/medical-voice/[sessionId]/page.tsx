@@ -143,6 +143,7 @@ export default function MedicalVoice() {
     vapi.on('call-start', () => {
       console.log(' Call started');
       handleCallStart();
+      toast.success("Call has started!")
     });
 
     vapi.on('call-end', () => {

@@ -76,7 +76,7 @@ export default function AddNewSessionDialog() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="bg-zinc-900 text-white border border-zinc-700 rounded-xl shadow-2xl max-w-2xl">
+      <DialogContent className="bg-zinc-900 text-white border border-zinc-700 rounded-xl shadow-2xl max-w-2xl overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold tracking-wide">
             Add New Session
@@ -102,7 +102,7 @@ export default function AddNewSessionDialog() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                  className="max-h-[400px] overflow-y-auto pr-2 grid grid-cols-1 sm:grid-cols-2 gap-4"
                 >
                   <AnimatePresence>
                     {aiDoctors.map((doctor, index) => (

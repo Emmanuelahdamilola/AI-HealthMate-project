@@ -15,7 +15,7 @@ export function RecommendedDoctorCard({ doctor, setSelectedDoctor, selectedDocto
       onClick={() => setSelectedDoctor(doctor)}
     >
       <div
-        className="cursor-pointer overflow-hidden relative card h-50 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-1 bg-cover bg-center bg-gray-100"
+        className="cursor-pointer overflow-hidden relative card h-80 rounded-md shadow-xl max-w-sm mx-auto backgroundImage flex flex-col justify-between p-1 bg-cover bg-center bg-gray-100"
         style={{
           backgroundImage: `url(${doctor.image})`,
           opacity: 0.66
@@ -37,7 +37,7 @@ export function RecommendedDoctorCard({ doctor, setSelectedDoctor, selectedDocto
           </div>
         </div>
         <div className="text content bg-black/40 p-2 rounded-md z-10">
-          <h1 className="font-semibold text-[14px] md:text-xl text-gray-50">{doctor.name}</h1>
+          <h1 className="font-semibold text-md md:text-xl text-gray-50">{doctor.name}</h1>
           <p className="font-normal text-sm line-clamp-2 text-gray-50">{doctor.description}</p>
         </div>
       </div>
