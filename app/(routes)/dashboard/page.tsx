@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <div>
       <div className='flex items-center justify-between'>
-        <h2>My Dashboard</h2>
+        <h2 className='mb-50'>My Dashboard</h2>
        <AddNewSessionDialog/>
       </div>
       <UserHistory />
