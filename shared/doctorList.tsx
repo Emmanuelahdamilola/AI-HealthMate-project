@@ -1,7 +1,7 @@
 export const AiDoctorList = [
   {
     "id": 1,
-    "name": "Dr. John Smith",
+    "name": "Dr. Emeka Uzochukwu",
     "specialty": "Cardiology",
     "description": "Helps patients with heart-related issues, including heart disease, hypertension, and arrhythmias.",
     "image": "/doctor1.PNG",
@@ -10,7 +10,7 @@ export const AiDoctorList = [
   },
   {
     "id": 2,
-    "name": "Dr. Emily Johnson",
+    "name": "Dr. Aisha Bello",
     "specialty": "Dermatology",
     "description": "Specializes in skin conditions, including acne, eczema, and skin cancer.",
     "image": "/doctor2.PNG",
@@ -19,7 +19,7 @@ export const AiDoctorList = [
   },
   {
     "id": 3,
-    "name": "Dr. Michael Brown",
+    "name": "Dr. Tunde Ajibola",
     "specialty": "Pediatrics",
     "description": "Focuses on the health and medical care of infants, children, and adolescents.",
     "image": "/doctor3.PNG",
@@ -28,7 +28,7 @@ export const AiDoctorList = [
   },
   {
     "id": 4,
-    "name": "Dr. Sarah Davis",
+    "name": "Dr. Zainab Musa",
     "specialty": "Neurology",
     "description": "Deals with disorders of the nervous system, including brain and spinal cord conditions.",
     "image": "/doctor4.PNG",
@@ -37,7 +37,7 @@ export const AiDoctorList = [
   },
   {
     "id": 5,
-    "name": "Dr. Luci Wilson",
+    "name": "Dr. Ifeoma Nwankwo",
     "specialty": "Orthopedics",
     "description": "Specializes in musculoskeletal system issues, including bones, joints, and muscles.",
     "image": "/doctor5.PNG",
@@ -46,7 +46,7 @@ export const AiDoctorList = [
   },
   {
     "id": 6,
-    "name": "Dr. James Martinez",
+    "name": "Dr. Ibrahim Danladi",
     "specialty": "Psychiatry",
     "description": "Focuses on mental health issues, including anxiety, depression, and schizophrenia.",
     "image": "/doctor6.PNG",
@@ -55,7 +55,7 @@ export const AiDoctorList = [
   },
   {
     "id": 7,
-    "name": "Dr. Lisa Garcia",
+    "name": "Dr. Nkechi Okoro",
     "specialty": "Gastroenterology",
     "description": "Specializes in digestive system disorders, including irritable bowel syndrome and liver diseases.",
     "image": "/doctor7.png",
@@ -64,7 +64,7 @@ export const AiDoctorList = [
   },
   {
     "id": 8,
-    "name": "Dr. Karen Lee",
+    "name": "Dr. Ronke Adebayo",
     "specialty": "Endocrinology",
     "description": "Focuses on hormonal disorders, including diabetes and thyroid issues.",
     "image": "/doctor8.png",
